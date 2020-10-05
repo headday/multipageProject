@@ -1,9 +1,9 @@
 import VidioPlayer from './modules/playVidio';
-import Slider from './modules/slider'
+import MainSlider from './modules/slider/main-slider'
 
 
 window.addEventListener('DOMContentLoaded',()=>{
-    const slider = new Slider('.page','.next');
+    const slider = new MainSlider({page: '.page', btns: '.next'});
 
     slider.render();
     

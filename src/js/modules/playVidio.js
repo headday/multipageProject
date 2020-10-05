@@ -13,7 +13,6 @@ export default class VidioPlayer{
                     const path = btn.getAttribute('data-url')
                     this.createPlayer(path);
                 }
-         
             })
         })
     }
@@ -25,7 +24,6 @@ export default class VidioPlayer{
             })
         })
     }
-
     createPlayer(url){
         this.player = new YT.Player('frame', {
             height: '360',
@@ -35,16 +33,12 @@ export default class VidioPlayer{
 
           this.overlay.style.display = 'flex';
     }
-
     init(){
         const tag = document.createElement('script');
       tag.src = "https://www.youtube.com/iframe_api";
       const firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-
         this.bindTriggers();
         this.bindClose();
-
     }
 }
