@@ -1,6 +1,7 @@
 import VidioPlayer from './modules/playVidio';
 import MainSlider from './modules/slider/main-slider'
 import MiniSlider from './modules/slider/mini-slider'
+import Differens from './modules/differens'
 
 
 window.addEventListener('DOMContentLoaded',()=>{
@@ -44,4 +45,6 @@ window.addEventListener('DOMContentLoaded',()=>{
         }
     )
     feedSlider.init();
+    const difference = new Differens('.officerold','.officernew','.officer__card-item','.officerold > .officer__card-item .card__click','.officernew > .officer__card-item .card__click')
+    difference.init();
 })

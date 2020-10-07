@@ -2763,6 +2763,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_playVidio__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/playVidio */ "./src/js/modules/playVidio.js");
 /* harmony import */ var _modules_slider_main_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/slider/main-slider */ "./src/js/modules/slider/main-slider.js");
 /* harmony import */ var _modules_slider_mini_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/slider/mini-slider */ "./src/js/modules/slider/mini-slider.js");
+/* harmony import */ var _modules_differens__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/differens */ "./src/js/modules/differens.js");
+
 
 
 
@@ -2798,7 +2800,80 @@ window.addEventListener('DOMContentLoaded', function () {
     autoplay: true
   });
   feedSlider.init();
+  var difference = new _modules_differens__WEBPACK_IMPORTED_MODULE_3__["default"]('.officerold', '.officernew', '.officer__card-item', '.officerold > .officer__card-item .card__click', '.officernew > .officer__card-item .card__click');
+  difference.init();
 });
+
+/***/ }),
+
+/***/ "./src/js/modules/differens.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/differens.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Differens; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Differens =
+/*#__PURE__*/
+function () {
+  function Differens(oldEducation, newEducation, items, oldTrigger, newTrigger) {
+    _classCallCheck(this, Differens);
+
+    this.oldEducation = document.querySelector(oldEducation);
+    this.newEducation = document.querySelector(newEducation);
+    this.oldTrigger = document.querySelector(oldTrigger);
+    this.newTrigger = document.querySelector(newTrigger);
+  }
+
+  _createClass(Differens, [{
+    key: "hideCards",
+    value: function hideCards() {
+      for (var i = 1; i < this.oldEducation.children.length - 1; i++) {
+        this.oldEducation.children[i].style.display = 'none';
+      }
+
+      for (var _i = 1; _i < this.newEducation.children.length - 1; _i++) {
+        this.newEducation.children[_i].style.display = 'none';
+      }
+    }
+  }, {
+    key: "addNewCard",
+    value: function addNewCard(container, trigger) {
+      var items = container.children;
+      var i = 1;
+      trigger.addEventListener('click', function () {
+        items[i].classList.add('animated', 'fadeIn');
+        items[i].style.display = 'flex';
+        i++;
+
+        if (i === 4) {
+          items[items.length - 1].style.display = 'none';
+        }
+      });
+    }
+  }, {
+    key: "init",
+    value: function init() {
+      console.log(this.oldEducation.children);
+      this.hideCards();
+      this.addNewCard(this.oldEducation, this.oldTrigger);
+      this.addNewCard(this.newEducation, this.newTrigger);
+    }
+  }]);
+
+  return Differens;
+}();
+
+
 
 /***/ }),
 
