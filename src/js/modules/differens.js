@@ -1,5 +1,5 @@
 export default class Differens{
-    constructor(oldEducation,newEducation,items,oldTrigger,newTrigger){
+    constructor(oldEducation,newEducation,items,oldTrigger = null,newTrigger = null){
         this.oldEducation = document.querySelector(oldEducation);
         this.newEducation = document.querySelector(newEducation);
         this.oldTrigger = document.querySelector(oldTrigger)
@@ -28,11 +28,11 @@ export default class Differens{
         })
     }
     init(){
-        console.log(this.oldEducation.children)
-        this.hideCards();
-
+        try {
+            this.hideCards();
         this.addNewCard(this.oldEducation,this.oldTrigger)
         this.addNewCard(this.newEducation,this.newTrigger)
+        } catch (error) {}
     }
 
 }
