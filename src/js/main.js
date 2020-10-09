@@ -34,6 +34,11 @@ window.addEventListener('DOMContentLoaded',()=>{
         }
     )
     modulesSlider.init();
+    const moduleSlider = new MainSlider({
+        container: '.moduleapp',
+        btns: '.next'
+    })
+    moduleSlider.render();
 
     const feedSlider = new MiniSlider(
         {
