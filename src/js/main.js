@@ -10,8 +10,9 @@ window.addEventListener('DOMContentLoaded',()=>{
 
     slider.render();
     
-    const player = new VidioPlayer('.showup .play','.overlay')
-    player.init();
+    new VidioPlayer('.showup .play','.overlay').init();
+    new VidioPlayer('.module__video-item','.overlay').init();
+
 
     const showUpsSlider = new MiniSlider(
         {
