@@ -3,6 +3,7 @@ import MainSlider from './modules/slider/main-slider'
 import MiniSlider from './modules/slider/mini-slider'
 import Differens from './modules/differens'
 import Form from './modules/form'
+import Accardion from './modules/accordion'
 
 
 window.addEventListener('DOMContentLoaded',()=>{
@@ -56,4 +57,5 @@ window.addEventListener('DOMContentLoaded',()=>{
     difference.init();
     const forms = new Form();
     forms.init();
+    new Accardion().init();
 })

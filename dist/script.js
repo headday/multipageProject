@@ -5079,6 +5079,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider_mini_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/slider/mini-slider */ "./src/js/modules/slider/mini-slider.js");
 /* harmony import */ var _modules_differens__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/differens */ "./src/js/modules/differens.js");
 /* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/form */ "./src/js/modules/form.js");
+/* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/accordion */ "./src/js/modules/accordion.js");
+
 
 
 
@@ -5125,7 +5127,61 @@ window.addEventListener('DOMContentLoaded', function () {
   difference.init();
   var forms = new _modules_form__WEBPACK_IMPORTED_MODULE_4__["default"]();
   forms.init();
+  new _modules_accordion__WEBPACK_IMPORTED_MODULE_5__["default"]().init();
 });
+
+/***/ }),
+
+/***/ "./src/js/modules/accordion.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/accordion.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Accardion; });
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Accardion =
+/*#__PURE__*/
+function () {
+  function Accardion() {
+    _classCallCheck(this, Accardion);
+
+    this.triggers = document.querySelectorAll('.module__info-show');
+  }
+
+  _createClass(Accardion, [{
+    key: "init",
+    value: function init() {
+      this.triggers.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          btn.nextElementSibling.classList.toggle('modules_active');
+
+          if (btn.nextElementSibling.classList.contains('modules_active')) {
+            btn.nextElementSibling.style.display = 'block';
+          } else {
+            btn.nextElementSibling.style.display = 'none';
+          }
+        });
+      });
+    }
+  }]);
+
+  return Accardion;
+}();
+
+
 
 /***/ }),
 
